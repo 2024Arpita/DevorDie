@@ -6,6 +6,9 @@ dotenv.config();
 
 const app = express();
 
+// using middlewares
+app.use(express.json());
+
 const port=process.env.PORT ;
 
 // immporting routes
