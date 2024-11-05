@@ -1,7 +1,7 @@
 import jwt from'jsonwebtoken';
 
 // we are generating token so that register krne k baad dobara login na krna pade turant hi website open ho jaye
-const generateToken=(id,res)=>{
+const generateToken=(id,res)=>{  //id jo store kr rhe usi se user ko find karenge
     const token=jwt.sign({id},process.env.Jwt_secret,{
         expiresIn:'30d', //token 30 days m expire hoga 
     })
