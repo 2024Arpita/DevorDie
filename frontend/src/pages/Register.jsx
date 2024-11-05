@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserData } from "../context/User";
 const Register = () => {
   const[email, setEmail]=useState("");
   const[password, setPassword]=useState("");
   const[name, setName]=useState("");
 
+
+  const {registerUser,btnLoading}=UserData();
+
+  const navigate=useNavigate();
+
   const submitHandle=(event)=>{
       event.preventDefault(); //page reload na ho
       // make API call to login user
       // handle success or failure
-      console.log(name,email, password);
+      registerUser(name,email, password,navigate);
     }
   return (
     <div className="flex items-center justify-center h-screen  max-h-screen">
@@ -56,7 +62,7 @@ const Register = () => {
               required
             />
           </div>
-          <button className="auth-btn">Register</button>
+          <button  disabled={btnLoading} className="auth-btn">{btnLoading ? "Please wait":"Register"}</button>
         </form>
         <div className="text-center mt-7">
           <Link
