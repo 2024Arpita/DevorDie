@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    @apply bg-black;  /* @apply to write tailwind css*/  
+}
+
+.auth-input{
+    @apply w-full p-3 bg-gray-800 rounded-md border border-gray-600
+    focus:outline-none focus:border-gray-400;
+}
+
+.auth-btn{
+    @apply  w-full bg-blue-600 hover:bg-blue-400 text-white font-semibold p-3 rounded-full;
+}
