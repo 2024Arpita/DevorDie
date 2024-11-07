@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const schema= new mongoose.Schema({
+const schema= new mongoose.Schema({  //schema is basically structure of user
     name:{
         type:String,
         required:true,
@@ -24,7 +24,7 @@ const schema= new mongoose.Schema({
     },
     ],
 },{
-    timestamps: true,
+    timestamps: true,  //utomatically adds createdAt and updatedAt fields to the schema.
 });
 
 export const User=mongoose.model("User",schema)

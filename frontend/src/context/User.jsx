@@ -5,7 +5,7 @@ import axios from "axios";
 // Create context
 const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
+export const UserProvider = ({children}) => {
   // State to store user data
   const [user, setUser] = useState(null);
   // Authentication status state
